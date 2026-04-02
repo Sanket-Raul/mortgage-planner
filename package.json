@@ -19,16 +19,3 @@
     "vite": "^5.1.0"
   }
 }
-```
-
-**3.** Save (Ctrl + S)
-
-**4.** Back in the terminal, run:
-```
-git add .
-```
-```
-git commit -m "fix package.json syntax"
-```
-```
-git push
