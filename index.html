@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Planner — Sanket</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body, #root { height: 100%; }
+      body {
+        background: #f1f5f9;
+        color: #0f172a;
+        font-family: 'Syne', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      input[type=range] { cursor: pointer; }
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button { opacity: 1; }
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: #090c14; }
+      ::-webkit-scrollbar-thumb { background: #1c2440; border-radius: 3px; }
+
+      @media print {
+        .no-print { display: none !important; }
+        body { background: white !important; color: #111 !important; }
+        .print-card { break-inside: avoid; border: 1px solid #ddd !important; background: #f9f9f9 !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
