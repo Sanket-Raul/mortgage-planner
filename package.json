@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node ./node_modules/vite/bin/vite.js build"
+    "build": "node ./node_modules/vite/bin/vite.js build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,3 +19,16 @@
     "vite": "^5.1.0"
   }
 }
+```
+
+**3.** Save (Ctrl + S)
+
+**4.** Back in the terminal, run:
+```
+git add .
+```
+```
+git commit -m "fix package.json syntax"
+```
+```
+git push
