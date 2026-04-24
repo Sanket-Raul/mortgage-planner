@@ -68,11 +68,12 @@ export default function ScenarioPlanner({ loan, setLoan }) {
     <div>
       {/* Loan inputs */}
       <Panel title="Loan Details" sub="Edit any field — all scenarios update instantly" style={{ marginBottom: 18 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12, marginBottom: 18 }}>
-          <NumInput label="Loan Balance"   value={balance} onChange={v => setLoan(l => ({ ...l, balance: v }))} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 12, marginBottom: 18 }}>
+         <NumInput label="Loan Balance"   value={balance} onChange={v => setLoan(l => ({ ...l, balance: v }))} />
           <NumInput label="Offset Account" value={offset}  onChange={v => setLoan(l => ({ ...l, offset: v }))}  />
           <NumInput label="Interest Rate"  value={rate}    onChange={v => setLoan(l => ({ ...l, rate: v }))}    prefix="%" step={0.01} />
           <NumInput label="Base Repayment" value={payment} onChange={v => setLoan(l => ({ ...l, payment: v }))} />
+          <NumInput label="Custom Extra Monthly" value={extra} onChange={setExtra} prefix="$" step={25} />
         </div>
         <RangeSlider
           label="Custom Extra Monthly"
@@ -87,9 +88,10 @@ export default function ScenarioPlanner({ loan, setLoan }) {
       </Panel>
 
       {/* Key stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12, marginBottom: 18 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 12, marginBottom: 18 }}>
         <StatCard label="Effective Balance"   value={fmt$(balance - offset)}      sub={`${fmt$(balance)} − ${fmt$(offset)} offset`} />
         <StatCard label="Interest Rate"       value={`${rate.toFixed(2)}%`}       sub="Was 5.47% · +0.25% RBA Mar 2026" />
+        <StatCard label="Years Remaining"     value={fmtDur(base.termMonths)}     sub={`${base.termMonths} months from Apr 2026`} />
         <StatCard label="New Repayment"       value={fmt$(payment)}               sub="from 22 May · Apr at $2,268" />
         <StatCard label="Total Interest Base" value={fmt$(base.totalInterest)}    sub={`Paid off ${fmtDur(base.termMonths)} from Apr 2026`} />
       </div>
